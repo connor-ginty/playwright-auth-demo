@@ -26,8 +26,8 @@ const rawUserData = [
     username: 'Ringo',
     password: 'beatles4',
     role: UserRole.GUEST,
-    skip: true // will be skipped during testing,
-  },
+    skip: true // will be skipped during testing
+  }
 ]
 
 export class UserProfile {
@@ -47,5 +47,5 @@ export class UserProfile {
 
 // list of unskipped test users which will be used to generate projects in the config
 export const userProfiles: UserProfile[] = rawUserData
-    .filter(user => !user.skip)
+  .filter(user => !user.skip)
   .map(u => new UserProfile(u.username, u.password, u.role))
