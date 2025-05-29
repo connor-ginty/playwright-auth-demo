@@ -27,7 +27,7 @@ const rawUserData = [
     password: 'beatles4',
     role: UserRole.GUEST,
     skip: true // will be skipped during testing,
-  }
+  },
 ]
 
 export class UserProfile {
@@ -41,11 +41,11 @@ export class UserProfile {
   }
   // procedurally synthesizes the storageState path for authentication later
   get storageState(): string {
-    return `e2e/.auth/${this.role}.json`
+    return `e2e/.auth/${this.username}.json`
   }
 }
 
 // list of unskipped test users which will be used to generate projects in the config
 export const userProfiles: UserProfile[] = rawUserData
-  .filter(user => !user.skip)
+    .filter(user => !user.skip)
   .map(u => new UserProfile(u.username, u.password, u.role))

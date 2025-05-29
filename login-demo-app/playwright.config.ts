@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   projects: userProfiles.flatMap(testUser => [
     {
-      name: `${testUser.role}-setup`,
+      name: `${testUser.username}-setup`,
       testMatch: new RegExp('.*/test\.setup\.ts$'),
       use: {
         browserName: 'chromium',
@@ -23,8 +23,8 @@ export default defineConfig({
       metadata: { user: testUser }
     },
     {
-      name: `${testUser.role}-tests`,
-      dependencies: [`${testUser.role}-setup`],
+      name: `${testUser.username}-tests`,
+      dependencies: [`${testUser.username}-setup`],
       use: {
         browserName: 'chromium',
         ...devices['Desktop Chrome'],

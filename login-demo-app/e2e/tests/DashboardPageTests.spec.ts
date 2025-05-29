@@ -7,7 +7,7 @@ test.describe('Role-Based Dashboard Message', () => {
   test('User can see role in message', async ({ dashboardPage, testUser }) => {
 
     // welcome message based on the test user's information
-    const welcomeMessage = `Welcome, ${testUser.username}! Role: ${testUser.role}`
+    let welcomeMessage = `Welcome, ${testUser.username}! Role: ${testUser.role}`
 
     // message intended for admins only
     const secretAdminMessage = 'This is a secret message for admins only.'
