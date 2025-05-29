@@ -5,6 +5,9 @@ test.describe('Role-Based Dashboard Message', () => {
 
   // testUser fixture is the user from the project metadata
   test('User can see role in message', async ({ dashboardPage, testUser }) => {
+    
+    // conditionally skips test case if first argument is true
+    test.skip(testUser.role === UserRole.MANAGER, 'Manager role does not fit this test case.')
 
     // welcome message based on the test user's information
     let welcomeMessage = `Welcome, ${testUser.username}! Role: ${testUser.role}`

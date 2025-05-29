@@ -20,7 +20,6 @@ const rawUserData = [
     username: 'George',
     password: 'beatles3',
     role: UserRole.MANAGER,
-    skip: true // will be skipped during testing
   },
   {
     username: 'Ringo',
